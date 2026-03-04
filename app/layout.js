@@ -8,8 +8,11 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata = {
-    title: 'Sanches - Software Engineer',
-    description: 'Engineering scalable systems with advanced technology',
+    title: 'Arnav Taneja - Software Developer',
+    description: 'Third-year CS student at IIIT Pune | Building innovative solutions with cloud, AI/ML, and full-stack technologies',
+    icons: {
+        icon: '/favicon.ico',
+    },
 }
 
 export default function RootLayout({ children }) {
