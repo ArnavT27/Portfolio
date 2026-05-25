@@ -13,7 +13,7 @@ const achievements = [
   {
     platform: 'LeetCode',
     rating: 'Max Rating: 1811',
-    problems: '600+ Problems Solved',
+    problems: '700+ Problems Solved',
     icon: Code2,
     color: 'from-orange-500 to-yellow-500',
     link: 'https://leetcode.com/u/ArnavT27/'
@@ -27,7 +27,7 @@ const achievements = [
     color: 'from-cyan-500 to-blue-500',
     link: 'https://codeforces.com/profile/arnavtaneja27'
   },
-  
+
   {
     platform: 'Problem Solving',
     rank: 'Top Performer',
@@ -65,7 +65,7 @@ export default function Achievements() {
             Consistent performance across competitive programming platforms
           </p>
         </motion.div>
-        
+
         {/* Achievement Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {achievements.map((achievement, index) => {
@@ -86,25 +86,25 @@ export default function Achievements() {
                 <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-950/50 border border-white/5 hover:border-white/10 transition-all p-6 h-full">
                   {/* Gradient overlay on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                  
+
                   {/* Icon */}
                   <div className="relative z-10 mb-4">
                     <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${achievement.color} p-3 group-hover:scale-110 transition-transform`}>
                       <Icon className="w-full h-full text-white" />
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
                     <h3 className="text-lg font-semibold mb-2 group-hover:text-indigo-400 transition-colors">
                       {achievement.platform}
                     </h3>
                     <div className="space-y-1">
-                        {achievement.rank?<p className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                      {achievement.rank ? <p className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                         {achievement.rank}
-                      </p>:<p></p>
+                      </p> : <p></p>
                       }
-                      
+
                       <p className="text-sm text-indigo-400 font-medium">
                         {achievement.rating}
                       </p>
@@ -113,7 +113,7 @@ export default function Achievements() {
                       </p>
                     </div>
                   </div>
-                  
+
                   {/* Hover indicator */}
                   <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
