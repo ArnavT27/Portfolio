@@ -11,6 +11,12 @@ const springTransition = {
 
 const works = [
   {
+    title: 'VypaarAI – AI-Powered Retail Management System',
+    category: 'Artificial Intelligence • Generative AI',
+    year: '2026',
+    github: 'https://github.com/ArnavT27/hisaab-kitaab-smart'
+  },
+  {
     title: 'Collaborative Code Editor',
     category: 'Real-time Collaboration • WebSockets',
     year: '2026',
@@ -40,7 +46,7 @@ export default function SelectedWorks() {
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
-  
+
   const springConfig = { damping: 25, stiffness: 300 }
   const cursorXSpring = useSpring(cursorX, springConfig)
   const cursorYSpring = useSpring(cursorY, springConfig)
@@ -66,7 +72,7 @@ export default function SelectedWorks() {
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Selected Works</h2>
           <p className="text-gray-400">Recent projects and case studies</p>
         </motion.div>
-        
+
         {/* Projects List - Vertical with border-bottom */}
         <div className="space-y-0">
           {works.map((work, index) => (
@@ -97,7 +103,7 @@ export default function SelectedWorks() {
                     {work.category} • {work.year}
                   </p>
                 </motion.div>
-                
+
                 {/* Index Number */}
                 <motion.div
                   animate={{ opacity: hoveredIndex === index ? 0.3 : 0.1 }}
@@ -107,8 +113,8 @@ export default function SelectedWorks() {
                   {String(index + 1).padStart(2, '0')}
                 </motion.div>
               </div>
-              
-              
+
+
               {/* Optional: Preview Image Background (subtle) */}
               {hoveredIndex === index && (
                 <motion.div

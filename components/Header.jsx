@@ -7,24 +7,24 @@ const MagneticLink = ({ href, children }) => {
   const ref = useRef(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  
+
   const springConfig = { damping: 15, stiffness: 150 }
   const xSpring = useSpring(x, springConfig)
   const ySpring = useSpring(y, springConfig)
 
   const handleMouseMove = (e) => {
     if (!ref.current) return
-    
+
     const rect = ref.current.getBoundingClientRect()
     const centerX = rect.left + rect.width / 2
     const centerY = rect.top + rect.height / 2
-    
+
     const distanceX = e.clientX - centerX
     const distanceY = e.clientY - centerY
-    
+
     const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
     const maxDistance = 100
-    
+
     if (distance < maxDistance) {
       const strength = (maxDistance - distance) / maxDistance
       x.set(distanceX * strength * 0.4)
@@ -53,7 +53,7 @@ const MagneticLink = ({ href, children }) => {
 
 export default function Header() {
   return (
-    <motion.header 
+    <motion.header
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
@@ -66,24 +66,24 @@ export default function Header() {
           <MagneticLink href="#services">Services</MagneticLink>
           <MagneticLink href="#works">Work</MagneticLink>
         </div>
-        
+
         {/* Center - Brand with Terminal Prompt */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
           <span className="text-cyan-400 text-lg font-mono">~/$</span>
           <h1 className="text-xl font-bold tracking-tight uppercase">Arnav</h1>
         </div>
-        
+
         {/* Right - Contact & Resume */}
         <div className="flex items-center gap-6">
-          <a 
-            href="https://drive.google.com/file/d/1E9V09s7jfOlRc8BS88drinkW2hyV77Ug/view?usp=sharing"
+          <a
+            href="https://drive.google.com/file/d/1MKMy9WY1xMzHffkKRIYP4AzWHa0CY01k/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm uppercase tracking-wider text-gray-400 hover:text-cyan-400 transition-colors"
           >
             Resume
           </a>
-          <a 
+          <a
             href="mailto:arnavtaneja27@gmail.com"
             className="text-sm uppercase tracking-wider text-gray-400 hover:text-cyan-400 transition-colors"
           >
